@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KeybroardEvent</title>
+</head>
+<body onload="doReady()">
+<img src="image/Kirby.gif" height="140" width="140" id="Kirby" style="position: absolute;left:0;top:0;">
+<script>
+function leftArrowPressed() {
+let element = document.getElementById('Kirby');
+element.style.left=parseInt(element.style.left)-5 +'px'
+}
+function rightArrowPressed() {
+    let element = document.getElementById('Kirby');
+    element.style.left=parseInt(element.style.left)+5 +'px'
+}
+function upArrowPressed() {
+    let element = document.getElementById('Kirby');
+    element.style.top=parseInt(element.style.top)-5 +'px'
+}
+function downArrowPressed() {
+    let element = document.getElementById('Kirby');
+    element.style.top=parseInt(element.style.top)+5 +'px'
+}
+function moveSelection(evt) {
+switch (evt.keyCode) {
+    case 37:
+    case 65:
+        leftArrowPressed();
+        break;
+    case 38:
+    case 87:
+        upArrowPressed();
+        break;
+    case 39:
+    case 68:
+        rightArrowPressed();
+        break;
+    case 40:
+    case 83:
+        downArrowPressed();
+        break;
+    }
+}
+function doReady() {
+    window.addEventListener("keydown",moveSelection);
+}
+</script>
+</body>
+</html>
